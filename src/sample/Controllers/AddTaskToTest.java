@@ -1,46 +1,48 @@
 package sample.Controllers;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import sample.Classes.Alerts;
+import javafx.fxml.Initializable;
 import sample.Classes.DB;
+import sample.Classes.Alerts;
 import sample.Classes.Task;
 import sample.Classes.TestData;
-
-import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.net.URL;
+
 
 public class AddTaskToTest implements Initializable {
     @FXML
+    ListView listView, lvToTest;
+    @FXML
     Button btnOk, btnCancel;
     @FXML
-    ListView listView, lvToTest;
+    CheckBox cbRemoveTasks;
     @FXML
     AnchorPane apRight;
     @FXML
     Label labTaskNum;
-    @FXML
-            CheckBox cbRemoveTasks;
 
     int taskNo = 1;
+
     ObservableList<Task> tasks = FXCollections.observableArrayList();
     ObservableList<Task> activeTasks = FXCollections.observableArrayList();
     ObservableList<ObservableList<Task>> toTest = FXCollections.observableArrayList();
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ArrayList<Integer> topicIDs = TestData.getTopicIDs();
 
         int numTasks = TestData.getNumTasks();
+        for (int i = 0; i < numTasks; i++)
+            toTest.add(i, null);
         ResultSet rst;
         for (int id: topicIDs){
             try {
@@ -81,23 +83,22 @@ public class AddTaskToTest implements Initializable {
         if (cbRemoveTasks.isSelected())
             tasks.add(selection.getSelectedItem());
     }
-
     public void onNextHandle(ActionEvent actionEvent) {
-        if (toTest.size()==0)
-            toTest.add(taskNo, lvToTest.getItems());
-        /*if (toTest.size() == 0 || toTest.get(taskNo)==null)
-            toTest.add(taskNo, lvToTest.getItems());
-        else
-            toTest.set(taskNo, lvToTest.getItems());
+        toTest.set(taskNo-1, activeTasks);
         if (taskNo < TestData.getNumTasks()){
             taskNo = ++taskNo;
             labTaskNum.setText("Задача № "+taskNo);
-        } else {
+            activeTasks.clear();
+        }
+        else {
             taskNo = 1;
             labTaskNum.setText("Задача № "+taskNo);
+            activeTasks.clear();
+            if (toTest.get(taskNo-1)!=null)
+                for (int i = 0; i < toTest.get(taskNo - 1).size(); i++)
+                    activeTasks.add(toTest.get(taskNo-1).get(i));
         }
-        if (toTest.get(taskNo)!=null)
-            lvToTest.setItems(toTest.get(taskNo));*/
+        lvToTest.setItems(activeTasks);
     }
 
     public void onPrevHandle(ActionEvent actionEvent) {
