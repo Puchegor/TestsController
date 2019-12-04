@@ -34,7 +34,7 @@ public class AddTaskToTest implements Initializable {
     int taskNo = 1;
     ObservableList<Task> tasks = FXCollections.observableArrayList();
     ObservableList<Task> activeTasks = FXCollections.observableArrayList();
-    ArrayList<ObservableList<Task>> toTest = new ArrayList<>();
+    ObservableList<ObservableList<Task>> toTest = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

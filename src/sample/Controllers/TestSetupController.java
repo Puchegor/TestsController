@@ -91,6 +91,7 @@ public class TestSetupController implements Initializable {
                     TreeItem<Item> top = new TreeItem<>(topic);
                     sub.getChildren().add(top);
                 }
+                topics.clear();
             }
         }catch(SQLException e){
             Alerts.Error(e.getMessage());
