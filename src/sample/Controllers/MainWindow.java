@@ -224,7 +224,7 @@ public class MainWindow implements Initializable {
                     taAnswer.getText()+"\", \""+idQuestion+"\", \""+isTrue);
             ResultSet rst = DB.SelectMax("idAnswer", "answers");
             try {
-                answers.add(new Answer(rst.getInt("max"), idQuestion, taAnswer.getText(), false));
+                answers.add(new Answer(rst.getInt(1), idQuestion, taAnswer.getText(), false));
             }catch (SQLException e){
                 Alerts.Error(e.getMessage());
             }

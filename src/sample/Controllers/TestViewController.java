@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class TestViewController implements Initializable {
@@ -26,6 +27,8 @@ public class TestViewController implements Initializable {
     WebView webView;
 
     String printableTest;
+
+    public TestViewController(){}
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -40,6 +43,7 @@ public class TestViewController implements Initializable {
 
     private String makeTest(ObservableList<Question> rawTest){
         String key = "";
+        String [] asw = {"а) ", "б) ", "в) ", "г) ", "д) ", "е) "};
         printableTest = "<!doctype html><html lang-\"ru-BY\"><head><meta charset=\"UTF-8\">" +
                 "<style> ol {list-style-type: none;}"+
                 "li::before {margin-right: 5px;}"+
@@ -67,12 +71,12 @@ public class TestViewController implements Initializable {
             for (int k = 0; k < TestData.getNumQuestions(); k++){
                 int nq = k+1;
                 key +="<p>"+nq;
-                printableTest += "<p>"+nq+". "+rawTest.get(k).getQuestion()+"</p><ol>";
+                printableTest += "<p><b>"+nq+". "+rawTest.get(k).getQuestion()+"</b></p>";
                 int correct = -1;
                 for (int a = 0; a < rawTest.get(k).getAnswers().size(); a++){
                     if (rawTest.get(k).getAnswers().get(a).isIsTrue())
                         correct = a;
-                    printableTest += "<li>"+rawTest.get(k).getAnswers().get(a).getAnswer()+"</li>";
+                    printableTest += "<p>"+asw[a]+rawTest.get(k).getAnswers().get(a).getAnswer()+"</p>";
                 }
                 switch (correct){
                     case 0:
@@ -94,8 +98,17 @@ public class TestViewController implements Initializable {
                         key += "</p>";
                         break;
                 }
-                //---------Вставка задач по вариантам-----------------------
-                printableTest += "</ol>";
+            }
+            //-----------Вставка задач-------------------------------------
+            printableTest += "<br>";
+            for (int j = 0; j < TestData.getNumTasks(); j++)
+            {
+                int taskNo = j+1;
+                printableTest += "<p><b>Задача № "+taskNo+" </b>";
+                Collections.shuffle(TestData.getTasks().get(j));
+                printableTest += TestData.getTasks().get(j).get(0)+"</p>";
+                key += "<p> Задача №"+taskNo+". "+TestData.getTasks().get(j).get(0).getAnswer()+"</p>";
+                TestData.getTasks().get(j).remove(0);
             }
             printableTest+="</div>";
             TestData.Shuffle();
