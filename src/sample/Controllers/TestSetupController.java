@@ -163,6 +163,8 @@ public class TestSetupController implements Initializable {
                 Alerts.Warning("Не добавлены задачи",
                         "Для продолжения работы добавьте задачи, или измените режим тестирования");
                 return;
+            } else {
+                startTestview(questions, hidvar);
             }
         }
     }

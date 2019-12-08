@@ -64,6 +64,9 @@ public class AddTaskToTest implements Initializable {
     }
 
     public void onOkHandle(ActionEvent actionEvent) {
+        TestData.setTasks(toTest);
+        Stage stage = (Stage)btnOk.getScene().getWindow();
+        stage.close();
     }
 
     public void onToTestHandle(ActionEvent actionEvent) {
@@ -84,11 +87,18 @@ public class AddTaskToTest implements Initializable {
             tasks.add(selection.getSelectedItem());
     }
     public void onNextHandle(ActionEvent actionEvent) {
-        toTest.set(taskNo-1, activeTasks);
+        ObservableList<Task> tasksInLv = FXCollections.observableArrayList();
+        for (int i = 0; i < activeTasks.size(); i++)
+            tasksInLv.add(activeTasks.get(i));
+        toTest.set(taskNo-1, tasksInLv);
         if (taskNo < TestData.getNumTasks()){
             taskNo = ++taskNo;
             labTaskNum.setText("Задача № "+taskNo);
             activeTasks.clear();
+            if (toTest.get(taskNo-1)!=null){
+                for (int i = 0; i < toTest.get(taskNo-1).size(); i++)
+                    activeTasks.add(toTest.get(taskNo-1).get(i));
+            }
         }
         else {
             taskNo = 1;
@@ -99,15 +109,5 @@ public class AddTaskToTest implements Initializable {
                     activeTasks.add(toTest.get(taskNo-1).get(i));
         }
         lvToTest.setItems(activeTasks);
-    }
-
-    public void onPrevHandle(ActionEvent actionEvent) {
-        /*if (taskNo > 1 && taskNo <=TestData.getNumTasks()){
-            taskNo = --taskNo;
-            labTaskNum.setText("Задача № "+taskNo);
-        }else {
-            taskNo = TestData.getNumTasks();
-            labTaskNum.setText("Задача №"+taskNo);
-        }*/
     }
 }

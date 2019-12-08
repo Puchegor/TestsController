@@ -24,7 +24,6 @@
                   <Label fx:id="labTaskNum" layoutX="14.0" layoutY="14.0" text="Задача № " AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
                   <ListView fx:id="lvToTest" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
                   <Button fx:id="btnNext" layoutX="230.0" layoutY="337.0" mnemonicParsing="false" onAction="#onNextHandle" text="Следующая &gt;&gt;" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="5.0" />
-                  <Button fx:id="btnPrev" layoutX="9.0" layoutY="337.0" mnemonicParsing="false" onAction="#onPrevHandle" text="&lt;&lt; Предыдущая" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="5.0" />
                </children></AnchorPane>
         </items>
       </SplitPane>

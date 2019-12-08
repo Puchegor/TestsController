@@ -8,7 +8,7 @@ import java.util.Collections;
 
 public class TestData {
     private static ObservableList<Question>questions = FXCollections.observableArrayList();
-    private static ObservableList<Task>tasks = FXCollections.observableArrayList();
+    private static ObservableList<ObservableList<Task>>tasks = FXCollections.observableArrayList();
     private static boolean hiddenVariants;
     private static int numVariants;
     private static int numQuestions;
@@ -26,7 +26,7 @@ public class TestData {
         TestData.questions = questions;
     }
 
-    public static void setTasks(ObservableList<Task> tasks) {
+    public static void setTasks(ObservableList<ObservableList<Task>> tasks) {
         TestData.tasks = tasks;
     }
 
@@ -50,7 +50,7 @@ public class TestData {
         return questions;
     }
 
-    public static ObservableList<Task> getTasks() {
+    public static ObservableList<ObservableList<Task>> getTasks() {
         return tasks;
     }
 
