@@ -64,6 +64,14 @@ public class AddTaskToTest implements Initializable {
     }
 
     public void onOkHandle(ActionEvent actionEvent) {
+        if (activeTasks == null) {
+            Alerts.Warning("Не выбраны задачи!", "Для продолжения работы необходимо выбрать задачи");
+            return;
+        }
+        ObservableList<Task> taskInLv = FXCollections.observableArrayList();
+        for (int i = 0; i < activeTasks.size(); i++)
+            taskInLv.add(activeTasks.get(i));
+        toTest.set(taskNo-1, taskInLv);
         TestData.setTasks(toTest);
         Stage stage = (Stage)btnOk.getScene().getWindow();
         stage.close();

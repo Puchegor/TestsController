@@ -12,7 +12,7 @@ public class TestData {
     private static boolean hiddenVariants;
     private static int numVariants;
     private static int numQuestions;
-    private static int numTasks;
+    private static int numTasks = 0;
     private static ArrayList<Integer> topicIDs = new ArrayList<>();
 
     public TestData(ObservableList<Question>questions, boolean hiddenVariants, int numVariants, int numQuestions){

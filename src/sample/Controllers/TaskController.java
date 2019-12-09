@@ -174,4 +174,18 @@ public class TaskController implements Initializable {
                 break;
         }
     }
+
+    public void onExportHandle(ActionEvent actionEvent) throws IOException{
+        Stage stage = (Stage)menuBar.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/Export.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
+    public void onTestHandle(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage)menuBar.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/TestSetup.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
 }

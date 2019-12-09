@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="08/12 - 1125">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="08/12 - 2000">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestsController/sample/Controllers/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestsController/sample/Controllers/MainWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestsController/sample/Controllers/TestSetupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestsController/sample/Controllers/TestSetupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TestsController/sample/Classes/TestData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestsController/sample/Classes/TestData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TestsController/sample/Controllers/TestViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestsController/sample/Controllers/TestViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestsController/sample/FXML/TestView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestsController/sample/FXML/TestView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controllers/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Classes/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Classes/TestData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/AddTaskToTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controllers/AddTaskToTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controllers/TaskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controllers/TestViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controllers/TestViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/FXML/TestView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXML/TestView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/FXML/TaskFrm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FXML/TaskFrm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.sq3" beforeDir="false" afterPath="$PROJECT_DIR$/test.sq3" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -73,21 +73,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TestSetupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="157" selection-start-line="157" selection-end-line="157" />
+            <state relative-caret-position="172">
+              <caret line="179" selection-start-line="179" selection-end-line="179" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/FXML/TestView.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="174" selection-start-line="5" selection-start-column="174" selection-end-line="5" selection-end-column="174" />
             </state>
           </provider>
         </entry>
@@ -95,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="320">
+              <caret line="188" column="30" selection-start-line="188" selection-start-column="30" selection-end-line="188" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,10 +95,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/FXML/TaskFrm.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="20" column="88" selection-start-line="20" selection-start-column="88" selection-end-line="20" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddTaskToTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="96" column="55" lean-forward="true" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#onToTestHandle#0;class#AddTaskToTest#0" />
+                <element signature="method#onOutTestHandle#0;class#AddTaskToTest#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TestViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="334">
+              <caret line="77" column="27" lean-forward="true" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,8 +145,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Classes/TestData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+            <state relative-caret-position="68">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,8 +194,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -206,7 +220,6 @@
         <option value="$PROJECT_DIR$/src/sample/Controllers/AddTaskController.java" />
         <option value="$PROJECT_DIR$/src/sample/Classes/Task.java" />
         <option value="$PROJECT_DIR$/src/sample/FXML/TaskFrm.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/TaskController.java" />
         <option value="$PROJECT_DIR$/src/sample/FXML/Export.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Classes/Alerts.java" />
         <option value="$PROJECT_DIR$/src/sample/Classes/DB.java" />
@@ -215,12 +228,15 @@
         <option value="$PROJECT_DIR$/src/sample/Classes/Question.java" />
         <option value="$PROJECT_DIR$/config.ini" />
         <option value="$PROJECT_DIR$/src/sample/FXML/AddTaskToTest.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Classes/TestData.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/AddTaskToTest.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/sample/FXML/SomeNewFile.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/TestSetupController.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/TestViewController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/OneMoreController.java" />
         <option value="$PROJECT_DIR$/src/sample/FXML/TestView.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/Classes/TestData.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/TestViewController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/AddTaskToTest.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/TaskController.java" />
       </list>
     </option>
   </component>
@@ -240,6 +256,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -283,7 +300,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -491,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575793574846</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="08/12 - 2000">
+      <created>1575824399761</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1575824399761</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -501,13 +524,13 @@
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17961165" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18203883" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34836704" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34836704" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39968896" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -532,27 +555,27 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16909385" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17961165" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34836704" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34836704" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39968896" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32970452" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32796487" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32659408" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.15291262" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
       <window_info anchor="right" id="Database" order="4" />
@@ -571,7 +594,8 @@
     <MESSAGE value="12.11.19" />
     <MESSAGE value="04/12 - 17" />
     <MESSAGE value="08/12 - 1125" />
-    <option name="LAST_COMMIT_MESSAGE" value="08/12 - 1125" />
+    <MESSAGE value="08/12 - 2000" />
+    <option name="LAST_COMMIT_MESSAGE" value="08/12 - 2000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -602,15 +626,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Controllers/AddTaskToTest.java</url>
-          <line>92</line>
+          <line>66</line>
           <properties />
-          <option name="timeStamp" value="36" />
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/Controllers/TestSetupController.java</url>
-          <line>179</line>
+          <url>file://$PROJECT_DIR$/src/sample/Controllers/AddTaskToTest.java</url>
+          <line>73</line>
           <properties />
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -695,14 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/TaskFrm.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Classes/Alerts.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -769,23 +785,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddTaskToTest.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="205">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TaskController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/FXML/SomeNewFile.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/OneMoreController.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/FXML/TestView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="172" selection-start-line="5" selection-start-column="172" selection-end-line="5" selection-end-column="172" />
         </state>
       </provider>
     </entry>
@@ -801,8 +814,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Classes/TestData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+        <state relative-caret-position="68">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -838,27 +851,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
-          <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
+          <caret line="1772" selection-start-line="1772" selection-end-line="1772" />
           <folding>
             <element signature="e#66921#66922#0" expanded="true" />
+            <element signature="e#66966#66967#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddTaskToTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="96" column="55" lean-forward="true" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onToTestHandle#0;class#AddTaskToTest#0" />
+            <element signature="method#onOutTestHandle#0;class#AddTaskToTest#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TestSetupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        <state relative-caret-position="172">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/FXML/TaskFrm.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="20" column="88" selection-start-line="20" selection-start-column="88" selection-end-line="20" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="188" column="30" selection-start-line="188" selection-start-column="30" selection-end-line="188" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -867,19 +904,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TestViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state relative-caret-position="334">
+          <caret line="77" column="27" lean-forward="true" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FXML/TestView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="174" selection-start-line="5" selection-start-column="174" selection-end-line="5" selection-end-column="174" />
         </state>
       </provider>
     </entry>

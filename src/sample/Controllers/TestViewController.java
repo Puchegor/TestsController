@@ -11,6 +11,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sample.Classes.Alerts;
 import sample.Classes.Question;
+import sample.Classes.Task;
 import sample.Classes.TestData;
 
 import java.io.File;
@@ -28,7 +29,7 @@ public class TestViewController implements Initializable {
 
     String printableTest;
 
-    public TestViewController(){}
+    //public TestViewController(){}
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -45,20 +46,12 @@ public class TestViewController implements Initializable {
         String key = "";
         String [] asw = {"а) ", "б) ", "в) ", "г) ", "д) ", "е) "};
         printableTest = "<!doctype html><html lang-\"ru-BY\"><head><meta charset=\"UTF-8\">" +
-                "<style> ol {list-style-type: none;}"+
-                "li::before {margin-right: 5px;}"+
-                "li:nth-child(1)::before { content: 'а)'; }"+
-                "li:nth-child(2)::before { content: 'б)'; }"+
-                "li:nth-child(3)::before { content: 'в)'; }"+
-                "li:nth-child(4)::before { content: 'г)'; }"+
-                "li:nth-child(5)::before { content: 'д)'; }"+
-                "li:nth-child(6)::before { content: 'е)'; }"+
-                "</style>" +
                 "<style>.column{" +
                 "column-count: 2; column-gap: 30px;}" +
                 "</style><style media = \"print\">" +
                 "@page{size: landscape;}.test{page-break-after: always}" +
                 "</style></head><body><div class=\"column\">";
+        TestData.Shuffle();
         for (int i = 0; i < TestData.getNumVariants(); i++){
             int v = i+1;
             String varNum;
@@ -101,17 +94,22 @@ public class TestViewController implements Initializable {
             }
             //-----------Вставка задач-------------------------------------
             printableTest += "<br>";
-            for (int j = 0; j < TestData.getNumTasks(); j++)
-            {
-                int taskNo = j+1;
-                printableTest += "<p><b>Задача № "+taskNo+" </b>";
-                Collections.shuffle(TestData.getTasks().get(j));
-                printableTest += TestData.getTasks().get(j).get(0)+"</p>";
-                key += "<p> Задача №"+taskNo+". "+TestData.getTasks().get(j).get(0).getAnswer()+"</p>";
-                TestData.getTasks().get(j).remove(0);
+            if (TestData.getTasks().size()!=0){
+                int num = TestData.getNumTasks();
+                for (int j = 0; j < num; j++)
+                {
+                    int taskNo = j+1;
+                    printableTest += "<p><b>Задача № "+taskNo+" </b>";
+                    ObservableList<Task> currTasks = TestData.getTasks().get(j);
+                    Collections.shuffle(currTasks);
+                    printableTest += TestData.getTasks().get(j).get(0)+"</p>";
+                    key += "<p> Задача №"+taskNo+". "+TestData.getTasks().get(j).get(0).getAnswer()+"</p>";
+                    TestData.getTasks().get(j).remove(0);
+                }
             }
             printableTest+="</div>";
-            TestData.Shuffle();
+            for (int u = 0; u < 4; u++)
+                TestData.Shuffle();
         }
         printableTest = printableTest + "<p>Ответы</p>" + key;
         printableTest += "</div></body></html>";
