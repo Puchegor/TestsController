@@ -57,7 +57,8 @@ public class TestViewController implements Initializable {
                 "</style><style media = \"print\">" +
                 "@page{size: landscape;}.test{page-break-after: always}" +
                 "</style></head><body><div class=\"column\">";
-        TestData.Shuffle();
+        for (int u = 0; u < 4; u++)
+            TestData.Shuffle();
         for (int i = 0; i < TestData.getNumVariants(); i++){
             int v = i+1;
             String varNum;
@@ -79,19 +80,19 @@ public class TestViewController implements Initializable {
                 }
                 switch (correct){
                     case 0:
-                        key += "a</p>";
+                        key += " a</p>";
                         break;
                     case 1:
-                        key += "б</p>";
+                        key += " б</p>";
                         break;
                     case 2:
-                        key += "в</p>";
+                        key += " в</p>";
                         break;
                     case 3:
-                        key += "г</p>";
+                        key += " г</p>";
                         break;
                     case 4:
-                        key += "д</p>";
+                        key += " д</p>";
                         break;
                     default:
                         key += "</p>";
