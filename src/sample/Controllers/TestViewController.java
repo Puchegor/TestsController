@@ -43,6 +43,12 @@ public class TestViewController implements Initializable {
     }
 
     private String makeTest(ObservableList<Question> rawTest){
+        boolean delquestion = true;
+        if (TestData.getQuestions().size() < TestData.getNumVariants()*TestData.getNumQuestions()){
+            Alerts.Warning("Вопросов в базе данных меньше, чем требуется для тестов. Возможны повторы вопросов.",
+                    "Введите дополнительные вопросы в базу или подключите дополнительные темы, если необходимо избегать повторов.");
+            delquestion = false;
+        }
         String key = "";
         String [] asw = {"а) ", "б) ", "в) ", "г) ", "д) ", "е) "};
         printableTest = "<!doctype html><html lang-\"ru-BY\"><head><meta charset=\"UTF-8\">" +
@@ -91,6 +97,8 @@ public class TestViewController implements Initializable {
                         key += "</p>";
                         break;
                 }
+                if (delquestion)
+                    rawTest.remove(k);
             }
             //-----------Вставка задач-------------------------------------
             printableTest += "<br>";
