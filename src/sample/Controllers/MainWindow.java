@@ -208,6 +208,8 @@ public class MainWindow implements Initializable {
     }
 
     public void onDelAnswerHandle(ActionEvent actionEvent) {
+        MultipleSelectionModel<Answer> selection = tableView.getSelectionModel();
+        DB.Delete("answers", "idAnswer = \""+selection.getSelectedItem().getIdAnswer()+"\"");
     }
 
     public void onSaveAnswerHandle(ActionEvent actionEvent) {
@@ -307,20 +309,21 @@ public class MainWindow implements Initializable {
     }
 
     public void onAddTask(ActionEvent actionEvent) throws IOException {
-        startNewWindow("../FXML/TaskFrm.fxml");
+        startNewWindow("../FXML/TaskFrm.fxml", "Ввод задач");
     }
 
     public void onExportHandle(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/Export.fxml");
+        startNewWindow("../FXML/Export.fxml", "Экспорт данных");
     }
-    private void startNewWindow(String url)throws IOException{
+    private void startNewWindow(String url, String titlt)throws IOException{
         Stage stage = (Stage)menuBar.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource(url));
+        stage.setTitle(titlt);
         Scene scene = new Scene(root, 700, 500);
         stage.setScene(scene);
     }
 
     public void onTestSetupHandle(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/TestSetup.fxml");
+        startNewWindow("../FXML/TestSetup.fxml", "Настройка теста");
     }
 }

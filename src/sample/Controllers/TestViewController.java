@@ -71,12 +71,12 @@ public class TestViewController implements Initializable {
             for (int k = 0; k < TestData.getNumQuestions(); k++){
                 int nq = k+1;
                 key +="<p>"+nq;
-                printableTest += "<p><b>"+nq+". "+rawTest.get(k).getQuestion()+"</b></p>";
+                printableTest += "<p><b>"+nq+". "+rawTest.get(0).getQuestion()+"</b></p>";
                 int correct = -1;
-                for (int a = 0; a < rawTest.get(k).getAnswers().size(); a++){
-                    if (rawTest.get(k).getAnswers().get(a).isIsTrue())
+                for (int a = 0; a < rawTest.get(0).getAnswers().size(); a++){
+                    if (rawTest.get(0).getAnswers().get(a).isIsTrue())
                         correct = a;
-                    printableTest += "<p>"+asw[a]+rawTest.get(k).getAnswers().get(a).getAnswer()+"</p>";
+                    printableTest += "<p>"+asw[a]+rawTest.get(0).getAnswers().get(a).getAnswer()+"</p>";
                 }
                 switch (correct){
                     case 0:
@@ -99,7 +99,8 @@ public class TestViewController implements Initializable {
                         break;
                 }
                 if (delquestion)
-                    rawTest.remove(k);
+                    rawTest.remove(0);
+                TestData.Shuffle();
             }
             //-----------Вставка задач-------------------------------------
             printableTest += "<br>";

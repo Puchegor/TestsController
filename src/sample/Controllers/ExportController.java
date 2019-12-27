@@ -35,11 +35,11 @@ public class ExportController implements Initializable {
     Button btnExport;
 
     public void onQuestionsHandle(ActionEvent actionEvent) throws IOException {
-        startNewWindow("../FXML/MainWindow.fxml");
+        startNewWindow("../FXML/MainWindow.fxml", "DIZ Test Controller - Ввод тестов");
     }
 
     public void onTaskHandle(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/TaskFrm.fxml");
+        startNewWindow("../FXML/TaskFrm.fxml", "DIZ Test Controller - Ввод задач");
     }
 
     public void onExitHandle(ActionEvent actionEvent) {
@@ -52,9 +52,10 @@ public class ExportController implements Initializable {
             lbStatus.setText("Соединение с базой данных установлено");
         buildTree();
     }
-    private void startNewWindow(String fxmlResource) throws IOException{
+    private void startNewWindow(String fxmlResource, String title) throws IOException{
         Stage stage = (Stage)menuBar.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource(fxmlResource));
+        stage.setTitle(title);
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
@@ -170,5 +171,9 @@ public class ExportController implements Initializable {
                 break;
         }
         Alerts.Succeses("База данных успешно экспортирована");
+    }
+
+    public void onTestSetupHandle(ActionEvent actionEvent) throws IOException{
+        startNewWindow("../FXML/TestSetup.fxml", "DIZ Test Controller - Настройка теста");
     }
 }

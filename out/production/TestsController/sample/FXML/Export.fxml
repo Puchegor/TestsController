@@ -19,6 +19,7 @@
             <items>
               <MenuItem fx:id="mniQuestions" mnemonicParsing="false" onAction="#onQuestionsHandle" text="Ввод вопросов" />
                   <MenuItem fx:id="mniTask" mnemonicParsing="false" onAction="#onTaskHandle" text="Ввод задач" />
+                  <MenuItem fx:id="mniTestSetup" mnemonicParsing="false" onAction="#onTestSetupHandle" text="Настройка тестов" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
