@@ -15,6 +15,7 @@ import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -315,12 +316,17 @@ public class MainWindow implements Initializable {
     public void onExportHandle(ActionEvent actionEvent) throws IOException{
         startNewWindow("../FXML/Export.fxml", "Экспорт данных");
     }
-    private void startNewWindow(String url, String titlt)throws IOException{
+    private void startNewWindow(String url, String titlt){
         Stage stage = (Stage)menuBar.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource(url));
-        stage.setTitle(titlt);
-        Scene scene = new Scene(root, 700, 500);
-        stage.setScene(scene);
+        try {
+            AnchorPane root = FXMLLoader.load(getClass().getResource(url));
+            stage.setTitle(titlt);
+            Scene scene = new Scene(root, 700, 500);
+            stage.setScene(scene);
+        } catch (IOException e){
+            Alerts.Error(e.getMessage());
+        }
+
     }
 
     public void onTestSetupHandle(ActionEvent actionEvent) throws IOException{
