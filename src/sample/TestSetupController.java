@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,15 +38,15 @@ public class TestSetupController implements Initializable {
     }
 
     public void onEnterTests(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/mainWindow.fxml");
+        startNewWindow("FXML/mainWindow.fxml");
     }
 
     public void onTasksHandle(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/TaskFRM.fxml");
+        startNewWindow("FXML/TaskFRM.fxml");
     }
 
     public void onExportHandle(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/Export.fxml");
+        startNewWindow("FXML/Export.fxml");
     }
 
     private void startNewWindow (String url) throws IOException{
@@ -177,7 +177,7 @@ public class TestSetupController implements Initializable {
         TestData.setNumTasks(Integer.parseInt(tfTasks.getText()));
 
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/TestView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXML/TestView.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -248,7 +248,7 @@ public class TestSetupController implements Initializable {
 
     private void showAddTask () throws IOException{
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/AddTaskToTest.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXML/AddTaskToTest.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Добавить задачи");
         stage.initModality(Modality.APPLICATION_MODAL);

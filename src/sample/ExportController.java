@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,11 +35,11 @@ public class ExportController implements Initializable {
     Button btnExport;
 
     public void onQuestionsHandle(ActionEvent actionEvent) throws IOException {
-        startNewWindow("../FXML/MainWindow.fxml", "DIZ Test Controller - Ввод тестов");
+        startNewWindow("FXML/MainWindow.fxml", "DIZ Test Controller - Ввод тестов");
     }
 
     public void onTaskHandle(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/TaskFrm.fxml", "DIZ Test Controller - Ввод задач");
+        startNewWindow("FXML/TaskFrm.fxml", "DIZ Test Controller - Ввод задач");
     }
 
     public void onExitHandle(ActionEvent actionEvent) {
@@ -174,6 +174,6 @@ public class ExportController implements Initializable {
     }
 
     public void onTestSetupHandle(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/TestSetup.fxml", "DIZ Test Controller - Настройка теста");
+        startNewWindow("FXML/TestSetup.fxml", "DIZ Test Controller - Настройка теста");
     }
 }

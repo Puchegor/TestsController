@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
@@ -310,11 +310,11 @@ public class MainWindow implements Initializable {
     }
 
     public void onAddTask(ActionEvent actionEvent) throws IOException {
-        startNewWindow("../FXML/TaskFrm.fxml", "Ввод задач");
+        startNewWindow("FXML/TaskFrm.fxml", "Ввод задач");
     }
 
     public void onExportHandle(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/Export.fxml", "Экспорт данных");
+        startNewWindow("FXML/Export.fxml", "Экспорт данных");
     }
     private void startNewWindow(String url, String titlt){
         Stage stage = (Stage)menuBar.getScene().getWindow();
@@ -330,6 +330,6 @@ public class MainWindow implements Initializable {
     }
 
     public void onTestSetupHandle(ActionEvent actionEvent) throws IOException{
-        startNewWindow("../FXML/TestSetup.fxml", "Настройка теста");
+        startNewWindow("FXML/TestSetup.fxml", "Настройка теста");
     }
 }

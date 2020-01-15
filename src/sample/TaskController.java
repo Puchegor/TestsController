@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -44,7 +44,7 @@ public class TaskController implements Initializable {
 
     public void onAddQuestions(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage)menuBar.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/mainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXML/mainWindow.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
@@ -177,14 +177,14 @@ public class TaskController implements Initializable {
 
     public void onExportHandle(ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage)menuBar.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/Export.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXML/Export.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
 
     public void onTestHandle(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage)menuBar.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/TestSetup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXML/TestSetup.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
