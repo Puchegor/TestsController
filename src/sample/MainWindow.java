@@ -332,4 +332,13 @@ public class MainWindow implements Initializable {
     public void onTestSetupHandle(ActionEvent actionEvent) throws IOException{
         startNewWindow("FXML/TestSetup.fxml", "Настройка теста");
     }
+
+    public void onCopyHandle(ActionEvent actionEvent) {
+        MultipleSelectionModel<Item> selection = treeView.getSelectionModel();
+        selection.setSelectionMode(SelectionMode.SINGLE);
+
+    }
+
+    public void onTransferHandle(ActionEvent actionEvent) {
+    }
 }
