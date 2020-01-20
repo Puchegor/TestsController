@@ -7,9 +7,9 @@
         <option name="description" value="" />
         <option name="htmlPlaceholderId" value="" />
         <option name="nativeBundle" value="all" />
-        <option name="title" value="" />
+        <option name="title" value="DIZ Test Controller" />
         <option name="vendor" value="" />
-        <option name="version" value="" />
+        <option name="version" value="0.5" />
       </options>
     </properties>
     <root id="root">

@@ -39,9 +39,9 @@
                      <contextMenu>
                         <ContextMenu>
                           <items>
-                            <MenuItem mnemonicParsing="false" text="Скопировать" />
-                              <MenuItem mnemonicParsing="false" text="Перенести" />
-                              <MenuItem mnemonicParsing="false" text="Удалить" />
+                            <MenuItem fx:id="mniCopy" mnemonicParsing="false" onAction="#onCopyHandle" text="Скопировать" />
+                              <MenuItem fx:id="mniTransfer" mnemonicParsing="false" onAction="#onTransferHandle" text="Перенести" />
+                              <MenuItem fx:id="mniDelete" mnemonicParsing="false" onAction="#delItemHandle" text="Удалить" />
                           </items>
                         </ContextMenu>
                      </contextMenu></TreeView>

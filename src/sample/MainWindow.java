@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -334,9 +335,115 @@ public class MainWindow implements Initializable {
     }
 
     public void onCopyHandle(ActionEvent actionEvent) {
-        MultipleSelectionModel<Item> selection = treeView.getSelectionModel();
+        MultipleSelectionModel<TreeItem<Item>> selection = treeView.getSelectionModel();
         selection.setSelectionMode(SelectionMode.SINGLE);
+        int level = treeView.getTreeItemLevel(selection.getSelectedItem());
+        int idParent = selection.getSelectedItem().getValue().getIdParent();
+        int idOwn = selection.getSelectedItem().getValue().getIdOwn();
+        String itemName = selection.getSelectedItem().getValue().getName();
+        switch (level){
+            case 1:
+                Alerts.Warning("Предмет не может быть скопирован", "Скопировать можно только тему или вопрос");
+                break;
+            case 2:
+                treeView.setOnMousePressed(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        int targetLevel = treeView.getTreeItemLevel(selection.getSelectedItem());
+                        switch(targetLevel){
+                            case 1:
+                                if (idParent == selection.getSelectedItem().getValue().getIdOwn())
+                                    Alerts.Warning("Нельзя скопировать выбранную тему в предмет, которому она принадлежит",
+                                            "Выберите другой предмет");
+                                else {
+                                    Optional<ButtonType> choise = Alerts.Confirmation("Вы хотите перенести тему \"" + itemName + "\" в предмет \"" +
+                                            selection.getSelectedItem().getValue().getName() + "\"", "Пожалуйста, подтвердите");
+                                    if (choise.get() == ButtonType.CANCEL){
+                                        treeView.setOnMousePressed(MainWindow.this::onTreeViewEntered);
+                                        break;
+                                    }else {
+                                        DB.Insert("topics",
+                                                "idSub, nameTopic",
+                                                selection.getSelectedItem().getValue().getIdOwn() + "\" ,\"" +
+                                                        itemName);
+                                        ResultSet rst = DB.Select("topics",
+                                                "nameTopic = \"" + itemName + "\" AND idSub = \"" +
+                                                        selection.getSelectedItem().getValue().getIdOwn() + "\"");
+                                        try {
+                                            selection.getSelectedItem().getChildren().add(new TreeItem<>(new Item(selection.getSelectedItem().getValue().getIdOwn(),
+                                                    rst.getInt("idTopic"), "topics", itemName)));
+                                        } catch (SQLException e) {
+                                            Alerts.Error(e.getMessage());
+                                        }
+                                        treeView.setOnMousePressed(MainWindow.this::onTreeViewEntered);
+                                    }
+                                }
+                                break;
+                            case 2:
+                                Alerts.Warning("Нельзя скопировать тему в другую тему!",
+                                        "Выберите предмет для продолжения работы");
+                                break;
+                            case 3:
+                                Alerts.Warning("Нельзя скопировать тему в вопрос!",
+                                        "Выберите предмет для продолжения работы");
+                                break;
+                        }
 
+                    }
+                });
+                break;
+            case 3:
+                treeView.setOnMousePressed(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        int targetLevel = treeView.getTreeItemLevel(selection.getSelectedItem());
+                        switch (targetLevel){
+                            case 1:
+                                break;
+                            case 2:
+                                if (idParent == selection.getSelectedItem().getValue().getIdOwn()) {
+                                    Alerts.Warning("Нельзя скопировать вопрос в тему, которой он принадлежит", "Выберите другую тему");
+                                    break;
+                                }else{
+                                    Optional<ButtonType> choise = Alerts.Confirmation("Вы хотите скопировать вопрос \""+itemName+"\"\n в тему \""+
+                                            selection.getSelectedItem().getValue().getName()+"\"?", "Пожалуйста, подтвердите");
+                                    if (choise.get() == ButtonType.CANCEL) {
+                                        treeView.setOnMousePressed(MainWindow.this::onTreeViewEntered);
+                                        break;
+                                    }else{
+                                        try {
+                                            ResultSet rst = DB.Select("questions", "idQuestion = \""+idOwn+"\"");
+                                            DB.Insert("questions","idTopic, nameQuestion, correctAnswer",
+                                                selection.getSelectedItem().getValue().getIdOwn()+"\", \""+itemName+"\", \""+
+                                                        rst.getString("correctAnswer"));
+                                            rst = DB.Select("questions", "nameQuestion = \""+itemName+"\" AND idTopic = \""+
+                                                selection.getSelectedItem().getValue().getIdOwn()+"\"");
+
+                                            int newQuestionId = rst.getInt("idQuestion");
+                                            selection.getSelectedItem().getChildren().add(new TreeItem<>(new Item(selection.getSelectedItem().getValue().getIdOwn(),
+                                                    newQuestionId, "questions", itemName)));
+                                            rst = DB.Select("answers", "idQuestion = \""+idOwn+"\"");
+                                            while (rst.next()){
+                                                DB.Insert("answers", "idQuestion, nameAnswer, isCorrect",
+                                                        newQuestionId+"\", \""+rst.getString("nameAnswer")+"\", \""+
+                                                        rst.getInt("isCorrect"));
+                                            }
+                                        }catch (SQLException e){
+                                            Alerts.Error(e.getMessage());
+                                        }
+
+                                    }
+                                }
+                                treeView.setOnMousePressed(MainWindow.this::onTreeViewEntered);
+                                break;
+                            case 3:
+                                Alerts.Warning("Нельзя скопировать вопрос в вопрос", "Выберите тему для копирования");
+                                break;
+                                //----ПОДУМАТЬ НАД Alerts.Warning with Confirmation
+                        }
+                    }
+                });
+        }
     }
 
     public void onTransferHandle(ActionEvent actionEvent) {
