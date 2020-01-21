@@ -6,12 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="04/12">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_src.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TestsController.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TestsController.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="21/01 - Lenovo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestsController.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TestsController.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestsController/sample/FXML/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestsController/sample/FXML/mainWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.sq3" beforeDir="false" afterPath="$PROJECT_DIR$/test.sq3" afterDir="false" />
     </list>
@@ -86,14 +82,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="340" column="76" lean-forward="true" selection-start-line="340" selection-start-column="76" selection-end-line="340" selection-end-column="76" />
+            <state relative-caret-position="558">
+              <caret line="516" column="30" lean-forward="true" selection-start-line="516" selection-start-column="30" selection-end-line="516" selection-end-column="30" />
               <folding>
                 <element signature="method#onSaveCorrectHandle#0;class#MainWindow#0" />
                 <element signature="method#onAddTask#0;class#MainWindow#0" />
                 <element signature="method#onExportHandle#0;class#MainWindow#0" />
                 <element signature="method#startNewWindow#0;class#MainWindow#0" />
                 <element signature="method#onTestSetupHandle#0;class#MainWindow#0" />
+                <element signature="e#23153#24957#0" />
               </folding>
             </state>
           </provider>
@@ -103,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/src/sample/Classes/Alerts.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="335">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -468,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579085158938</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="21/01 - Lenovo">
+      <created>1579559578696</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1579559578696</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -484,7 +488,7 @@
       <window_info id="Designer" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34681183" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34681183" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39813375" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -550,7 +554,8 @@
     <MESSAGE value="08/12 - 1125" />
     <MESSAGE value="08/12 - 2000" />
     <MESSAGE value="23.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="23.12" />
+    <MESSAGE value="21/01 - Lenovo" />
+    <option name="LAST_COMMIT_MESSAGE" value="21/01 - Lenovo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="0" key="CommitChangelistDialog2" timestamp="1579085149117">
@@ -694,17 +699,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Classes/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Classes/Alerts.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
@@ -718,16 +716,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Classes/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="340" column="76" lean-forward="true" selection-start-line="340" selection-start-column="76" selection-end-line="340" selection-end-column="76" />
+        <state relative-caret-position="558">
+          <caret line="516" column="30" lean-forward="true" selection-start-line="516" selection-start-column="30" selection-end-line="516" selection-end-column="30" />
           <folding>
             <element signature="method#onSaveCorrectHandle#0;class#MainWindow#0" />
             <element signature="method#onAddTask#0;class#MainWindow#0" />
             <element signature="method#onExportHandle#0;class#MainWindow#0" />
             <element signature="method#startNewWindow#0;class#MainWindow#0" />
             <element signature="method#onTestSetupHandle#0;class#MainWindow#0" />
+            <element signature="e#23153#24957#0" />
           </folding>
         </state>
       </provider>

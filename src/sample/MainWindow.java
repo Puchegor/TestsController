@@ -447,5 +447,79 @@ public class MainWindow implements Initializable {
     }
 
     public void onTransferHandle(ActionEvent actionEvent) {
+        MultipleSelectionModel<TreeItem<Item>> selection = treeView.getSelectionModel();
+        selection.setSelectionMode(SelectionMode.SINGLE);
+        int level = treeView.getTreeItemLevel(selection.getSelectedItem());
+        int itemId = selection.getSelectedItem().getValue().getIdOwn();
+        int parentId = selection.getSelectedItem().getValue().getIdParent();
+        String nameItem = selection.getSelectedItem().getValue().getName();
+        switch (level){
+            case 1:
+                Alerts.Warning("Нельзя переместить предмет", "Для перемещения выберите тему или вопрос");
+                break;
+            case 2://-----УБРАТЬ - ДОБАВИТЬ в дерево
+                treeView.setOnMousePressed(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        int newLevel = treeView.getTreeItemLevel(selection.getSelectedItem());
+                        switch (newLevel){
+                            case 1:
+                                if (parentId == selection.getSelectedItem().getValue().getIdOwn()){
+                                    Alerts.Warning("Нельзя перенести тему в предмет, частью которого она является",
+                                            "Выберите другой предмет");
+                                    break;
+                                }else{
+                                    Optional<ButtonType> choise = Alerts.Confirmation("Вы хотите перенести тему \""+nameItem+
+                                            "\" в \n \""+selection.getSelectedItem().getValue().getName()+"\"", "Пожалуйста подтвердите");
+                                    if (choise.get() == ButtonType.CANCEL){
+                                        treeView.setOnMousePressed(MainWindow.this::onTreeViewEntered);
+                                        break;
+                                    }else{
+                                        DB.Update("topics",
+                                                "idSub = \""+selection.getSelectedItem().getValue().getIdOwn()+"\"",
+                                                "idTopic = \""+itemId+"\"");
+                                        treeView.setOnMousePressed(MainWindow.this::onTreeViewEntered);
+                                    }
+                                }
+                                break;
+                            case 2:
+                                Alerts.Warning("Нельзя переместить тему в другую тему","Для перемещения темы выберите  предмет");
+                                break;
+                            case 3:
+                                Alerts.Warning("Нельзя переместить тему в вопрос", "Для перемещения темы выберите предмет");
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 3:
+                int newQuestionLevel = treeView.getTreeItemLevel(selection.getSelectedItem());
+                switch (newQuestionLevel){
+                    case 1:
+                        break;
+                    case 2:
+                        if (parentId == selection.getSelectedItem().getValue().getIdOwn() ){
+                            Alerts.Warning("Нельзя переместить вопрос в тему, частью которой он является", "Выберите другую тему");
+                        }else {
+                            Optional<ButtonType> choise = Alerts.Confirmation("Вы хотите перенести вопрос \"" + nameItem +
+                                    "\"\n в " + selection.getSelectedItem().getValue().getName() + "\"?", "Пожалуйста, подтвердите");
+                            if (choise.get() == ButtonType.CANCEL){
+                                treeView.setOnMousePressed(this::onTreeViewEntered);
+                            }else{
+                                DB.Update("questions", "idTopic = \""+selection.getSelectedItem().getValue().getIdOwn()+"\"",
+                                        "idQuestion = \""+itemId+"\"");
+                                selection.getSelectedItem().getChildren().add(new TreeItem<>(new Item(selection.getSelectedItem().getValue().getIdOwn(),
+                                        itemId, "questions", nameItem)));
+                                Alerts.Succeses("Вопрос успешно перенесен");
+                                treeView.setOnMousePressed(this::onTreeViewEntered);
+                            }
+                        }
+                        break;
+                    case 3:
+                        Alerts.Warning("Нельзя перенести вопрос в другой вопрос", "Для переноса выберите тему");
+                        break;
+                }
+                break;
+        }
     }
 }
