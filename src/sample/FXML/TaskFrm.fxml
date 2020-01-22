@@ -12,19 +12,23 @@
         <menus>
           <Menu mnemonicParsing="false" text="Файл">
             <items>
+                  <MenuItem mnemonicParsing="false" text="Открыть базу данных" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
               <MenuItem fx:id="mniExit" mnemonicParsing="false" onAction="#onExitHandle" text="Выйти" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Вид">
             <items>
                   <MenuItem fx:id="mniAddQuestions" mnemonicParsing="false" onAction="#onAddQuestions" text="Ввод вопросов" />
                   <MenuItem fx:id="mniTest" mnemonicParsing="false" onAction="#onTestHandle" text="Настройка тестов" />
               <MenuItem fx:id="mniExport" mnemonicParsing="false" onAction="#onExportHandle" text="Экспорт" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Помощь">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" text="Ввод данных" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="О программе" />
             </items>
           </Menu>
         </menus>

@@ -453,6 +453,8 @@ public class MainWindow implements Initializable {
         int itemId = selection.getSelectedItem().getValue().getIdOwn();
         int parentId = selection.getSelectedItem().getValue().getIdParent();
         String nameItem = selection.getSelectedItem().getValue().getName();
+        TreeItem<Item> toDelete = selection.getSelectedItem();
+        int delIndex = selection.getSelectedIndex();
         switch (level){
             case 1:
                 Alerts.Warning("Нельзя переместить предмет", "Для перемещения выберите тему или вопрос");
@@ -478,6 +480,9 @@ public class MainWindow implements Initializable {
                                         DB.Update("topics",
                                                 "idSub = \""+selection.getSelectedItem().getValue().getIdOwn()+"\"",
                                                 "idTopic = \""+itemId+"\"");
+                                        selection.getSelectedItem().getChildren().add(new TreeItem<>(new Item(selection.getSelectedItem().getValue().getIdOwn(),
+                                                itemId, "topics", nameItem)));
+                                        toDelete.getParent().getChildren().remove(delIndex-1);//Почему-то ошибка
                                         treeView.setOnMousePressed(MainWindow.this::onTreeViewEntered);
                                     }
                                 }
@@ -510,6 +515,7 @@ public class MainWindow implements Initializable {
                                         "idQuestion = \""+itemId+"\"");
                                 selection.getSelectedItem().getChildren().add(new TreeItem<>(new Item(selection.getSelectedItem().getValue().getIdOwn(),
                                         itemId, "questions", nameItem)));
+                                toDelete.getParent().getChildren().remove(delIndex);
                                 Alerts.Succeses("Вопрос успешно перенесен");
                                 treeView.setOnMousePressed(this::onTreeViewEntered);
                             }
